@@ -45,16 +45,16 @@ Anular matrícula: se pide DNI y se borra la información el alumno
                       String a=br.readLine();
                       System.out.println("Introduce telefono");
                       String t=br.readLine();
-                      while(validarTelefono==false){//hacer funcion
+                      while(validarTelefono(t)==false){//hacer funcion
                           System.out.println("Error.Introduce telefono");
                           t=br.readLine();
                       }
                       System.out.println("Dni:");
                       String d=br.readLine();
-                      while(validarDni==false){//hacer funcion
+                      /**while(validarDni==false){//hacer funcion
                           System.out.println("Error.Introduce dni");
                           d=br.readLine();
-                      }
+                      }*/
                       clase[contAlumno]=new Alumno(n,a,t,d);
                       Alumno.setTotalAlumnos();
                   }
@@ -90,9 +90,19 @@ Anular matrícula: se pide DNI y se borra la información el alumno
     }
     //teléfono (validar que sea correcto, comienza por 9 o 6, con 
  // longitud de 9)
-    static boolean validarTelefono(){
-        if()
-        
+    static boolean validarTelefono(String d){
+        if(d.length()<9 && d.length()>9){
+            System.out.println("Faltan numeros");
+            return false;
+        }
+        else{
+            for(int i=0;i<d.length();i++){
+                if(d.charAt(i)<'0' && d.charAt(i)>'9'){
+                    System.out.println("Todos no son numeros");
+                    return false;
+                }
+            }
+        }    
     return true;
     }
 }
