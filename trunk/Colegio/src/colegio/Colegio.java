@@ -45,16 +45,16 @@ Anular matrícula: se pide DNI y se borra la información el alumno
                       String a=br.readLine();
                       System.out.println("Introduce telefono");
                       String t=br.readLine();
-                      while(validarTelefono(t)==false){//hacer funcion
+                      /**while(validarTelefono(t)==false){//hacer funcion
                           System.out.println("Error.Introduce telefono");
                           t=br.readLine();
-                      }
+                      }*/
                       System.out.println("Dni:");
                       String d=br.readLine();
-                      /**while(validarDni==false){//hacer funcion
+                      while(validarDni(d)==false){//hacer funcion
                           System.out.println("Error.Introduce dni");
                           d=br.readLine();
-                      }*/
+                      }
                       clase[contAlumno]=new Alumno(n,a,t,d);
                       Alumno.setTotalAlumnos();
                   }
